@@ -1,0 +1,223 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #E0D7BD;
+}
+
+/* Banner */
+.banner {
+    background-color: black;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.banner img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Cabeçalho e Navegação */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Botões com fundo branco e animação */
+.botoes {
+    background-color: white;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.botao {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-color: #d6d0ad;
+    color: black;
+    border-radius: 50%;
+    line-height: 80px;
+    font-size: 24px;
+    margin: 0 15px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.botao:hover {
+    animation: salto 0.5s infinite alternate;
+}
+
+@keyframes salto {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+/* Descrição com transição simples */
+.descricao {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    color: black;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    margin-top: 3px; /* Aproxima a descrição dos botões */
+}
+
+.botao:hover .descricao {
+    opacity: 1;
+}
+
+/* Carrossel com centralização e looping */
+.carrossel-conteiner {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    width: 80%; /* Ajuste da largura do carrossel */
+    margin: 0 auto 40px auto;
+}
+
+.carrossel-imagens {
+    display: flex;
+    transition: transform 1s ease;
+}
+
+/* Garantir que todas as imagens fiquem invisíveis por padrão */
+.carrossel-imagens img {
+    display: none; /* Oculta todas as imagens */
+}
+
+/* Exibe apenas a imagem atual (com a classe active) */
+.carrossel-imagens img.active {
+    display: block; /* Apenas a imagem ativa ficará visível */
+}
+/* Espaçamento entre os carrosséis */
+.carrossel {
+    margin-bottom: 110px; /* Ajuste o valor conforme necessário */
+}
+/* Transição para as imagens no carrossel */
+.carrossel-imagens img {
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Imagem ativa */
+.carrossel-imagens img.active {
+    opacity: 1;
+    transform: scale(1.05); /* Efeito de leve zoom para a imagem ativa */
+}
+
+
+
+/* Botões de navegação */
+.prev, .next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Títulos centralizados */
+.subsecao h2 {
+    text-align: center;
+    font-size: 1.8em;
+    margin: 20px 0;
+}
+
+/* Carrossel - Títulos Novidades e Promoções */
+.subsecao {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.subsecao h2 {
+    margin-bottom: 20px;
+}
+
+/* Espaçamento entre seções */
+.subsecoes .subsecao {
+    margin-bottom: 60px;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .botoes {
+        padding: 20px;
+    }
+
+    .botao {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 18px;
+        margin: 10px;
+    }
+
+    .descricao {
+        font-size: 14px;
+    }
+
+    .carrossel-conteiner {
+        width: 90%; /* Ajuste para dispositivos menores */
+    }
+}
